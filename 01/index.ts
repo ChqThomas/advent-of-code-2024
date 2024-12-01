@@ -22,7 +22,14 @@ for (let i = 0; i < rows.length; i++) {
 
 // Part 1
 const total1 = pairs.reduce((acc, r) => {
-    return acc += Math.abs(r[0] - r[1]);
+    return acc + Math.abs(r[0] - r[1]);
 }, 0);
 
 console.log('Total part 1:', total1);
+
+// Part 2
+const total2 = left.reduce((acc, l) => {
+    return acc + (l * right.filter(r => r === l).length);
+}, 0);
+
+console.log('Total part 2:', total2);
